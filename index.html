@@ -6,6 +6,12 @@
 	<meta name="description" content="Gra w życie Johna Conwaya."/>
 	<meta name="keywords" content="gra, gra w życie, Conway, John Conway"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<script src="game_of_life.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -19,12 +25,67 @@
 			
 		</div>
 		<div id="options">
-			
+			<div class="button" id="b0" onclick="change_option(0)">
+				<div id="live_dead"></div>
+			</div>
+			<div class="button" id="b1" onclick="change_option(1)">
+				<div id="live"></div>
+			</div>
+			<div class="button" id="b2" onclick="change_option(2)">
+				<div id="dead"></div>
+			</div>
+			<div class="button" id="cls" onclick="cls()">
+				<div id="table">
+					<div class="empty_cell_top_left"></div>
+					<div class="empty_cell_top"></div>
+					<div class="empty_cell_top"></div>
+					<div class="empty_cell_top"></div>
+					<div style="clear: both"></div>
+					<div class="empty_cell_left"></div>
+					<div class="empty_cell"></div>
+					<div class="empty_cell"></div>
+					<div class="empty_cell"></div>
+					<div style="clear: both"></div>
+					<div class="empty_cell_left"></div>
+					<div class="empty_cell"></div>
+					<div class="empty_cell"></div>
+					<div class="empty_cell"></div>
+					<div style="clear: both"></div>
+					<div class="empty_cell_left"></div>
+					<div class="empty_cell"></div>
+					<div class="empty_cell"></div>
+					<div class="empty_cell"></div>
+					<div style="clear: both"></div>
+				</div>
+			</div>
+			<div class="button" id="step" onclick="step()">
+				<div id="half-circle"></div>
+				<div id="arrow"></div>
+			</div>
+			<div class="button_speed" id="speed">
+				<div class="buttonX" id="play" onclick="play_or_pause()">
+					<div id="play_sign"></div>
+				</div>
+				<div class="speed_button" id="plus" onclick="minus()">–</div>
+				<div class="speed_range" onclick="speed_range()"><input id="slider1" onchange="change_speed()" type="range" min="1" max="20" step="1" /></div>
+				<div class="speed_button" id="minus" onclick="plus()">+</div>
+				<div class="speed_text" id="speed_number">x</div>
+				<div style="clear: both"></div>	
+			</div>
+			<div class="button_loupe" id="speed">
+				<div id="loupe">&#8981</div>
+				<div class="speed_button" id="plus" onclick="minus_loupe()">–</div>
+				<div class="speed_range" onclick="loupe_range()"><input id="slider2" onchange="change_lopue()" type="range" min="1" max="10" step="1" /></div>
+				<div class="speed_button" id="minus" onclick="plus_loupe()">+</div>
+				<div class="speed_text" id="loupe_number">x</div>
+				<div style="clear: both"></div>	
+			</div>
+			<div class="button" id="net" onclick="change_net()"></div>
+			<div style="clear: both"></div>
 		</div>
 		<div id="footer">
 			Stopka
 		</div>
-	<div style="clear: both">
 	</div>
 </body>
 </html>

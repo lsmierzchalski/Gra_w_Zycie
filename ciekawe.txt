@@ -1,0 +1,10 @@
+http://anyfiles.pl/Stephen-Hawking-Wielki-projekt-Sens-istnienia-%C5%BCycia-2-3/Nauka-i-technologia/video/115087
+
+https://www.h3xed.com/web-development/how-to-make-css-play-pause-icons-with-a-single-div
+
+http://www.colorzilla.com/gradient-editor/
+
+Reguły gry według Conwaya:
+-Żywa komórka z 2 albo 3 żywymi sąsiadami pozostaje nadal żywa; przy innej liczbie sąsiadów umiera (z „samotności” albo „zatłoczenia”)
+
+-Martwa komórka, która ma dokładnie 3 żywych sąsiadów, staje się żywa w następnej jednostce czasu (rodzi się)

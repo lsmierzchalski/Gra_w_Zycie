@@ -1,21 +1,243 @@
 body	{
-	
+	background-color: #000000;
+	color: #ffffff;
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	user-select:none;
 }
 #wrapper{
-	
+	height: 100%;
+	width: 100%;
 }
 #header	{
-	
+	height: 150px;
+	border-bottom: thick double white;
 }
 #logo	{
-	
+	padding-top: 20px;
+	padding-left: 50px;
+	font-size: 80px;
 }
 #world	{
-	
+	height:650px;
+}
+.cell	{
+	width: 19px;
+	height: 19px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	float: left;
+}
+.cell_no_net	{
+	width: 20px;
+	height: 20px;
+	float: left;
 }
 #options{
+	border-top: thick double white;
+	height:120px;
+}
+.button	{
+	width: 80px;
+	height: 80px;
+	border: thin solid white;
+	float: left;
+	margin: 20px 10px 10px 20px;
+}
+.buttonX	{
+	width: 60px;
+	height: 60px;
+	border: thin solid white;
+	float: left;
+	margin: 10px 10px 10px 10px;
+}
+#live_dead	{
+	width: 38px;
+	height: 38px;
+	border: thin solid white;
+	margin: 20px 20px 20px 20px;
+	background: -webkit-linear-gradient(-45deg, #00ff00 50%,#000000 50%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #00ff00 50%,#000000 50%);
+}
+#live	{
+	width: 38px;
+	height: 38px;
+	border: thin solid white;
+	margin: 20px 20px 20px 20px;
+	background-color: #00ff00;
+}
+#dead	{
+	width: 38px;
+	height: 38px;
+	border: thin solid white;
+	margin: 20px 20px 20px 20px;
+	background-color: #000000;
+}
+#cls	{
 	
 }
+#table	{
+	margin: 20px 0 0 20px;
+}
+#half-circle {
+	margin: 19px 0 0 9px;
+    width: 36px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    border: 10px solid #FFF;
+    border-bottom: 0;
+}
+#arrow	{
+	width: 0;
+    height: 0;
+	margin: 0 0 0 48px;
+    border-left: 11px solid transparent;
+    border-top: 15px solid #fff;
+    border-right: 11px solid transparent;
+}
+#play_sign	{
+	margin: 10px 10px 20px 15px;
+    border-top: 20px solid transparent;
+    border-left: 30px solid #fff;
+		border-bottom: 20px solid transparent;
+}
+#pause_sign {
+	margin: 10px 20px 20px 10px;
+    width: 10px;
+    height: 40px;
+    border-right: 15px solid #fff;
+    border-left: 15px solid #fff;
+}
+.button_speed	{
+	width: 480px;
+	height: 80px;
+	border: thin solid white;
+	float: left;
+	margin: 20px 10px 10px 20px;
+	font-size: 56px;
+}
+.speed_button{
+	width: 38px;
+	height: 38px;
+	border: thin solid white;
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-indent: 1%;
+	line-height: 60%;
+}
+.speed_range	{
+	float: left;
+	margin-top: 0px;
+}
+.speed_text	{
+	float: left;
+	margin-top: 5px;
+}
+.button_loupe	{
+	width: 460px;
+	height: 80px;
+	border: thin solid white;
+	float: left;
+	margin: 20px 10px 10px 20px;
+	font-size: 56px;
+}
+#loupe	{
+	font-size: 100px;
+	width: 38px;
+	height: 38px;
+	float: left;
+	margin-top: -5px;
+	margin-left: 10px;
+	margin-right: 20px;
+	text-indent: 1%;
+	line-height: 60%;
+}
 #footer	{
-	
+	height: 100%;
+}
+
+
+.empty_cell	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	float: left;
+}
+.empty_cell_top_left	{
+	width: 9px;
+	height: 9px;
+	border: thin solid white;
+	float: left;
+}
+.empty_cell_top	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	border-top: thin solid white;
+	float: left;
+}
+.empty_cell_left	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	border-left: thin solid white;
+	float: left;
+}
+
+.empty_cellX	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	float: left;
+}
+.empty_cell_top_leftX	{
+	width: 9px;
+	height: 9px;
+	border: thin solid white;
+	float: left;
+}
+.empty_cell_topX	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	border-top: thin solid white;
+	float: left;
+}
+.empty_cell_leftX	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	border-left: thin solid white;
+	float: left;
+}
+
+.empty_cellY	{
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+.empty_cell_top_leftY	{
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+.empty_cell_topY	{
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+.empty_cell_leftY	{
+	width: 10px;
+	height: 10px;
+	float: left;
 }
