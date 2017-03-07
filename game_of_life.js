@@ -1,5 +1,5 @@
-const CELLS_VERTICALLY = 34;
-const CELLS_HORIZONTAL = 98;
+const CELLS_VERTICALLY = 67;
+const CELLS_HORIZONTAL = 192;
 tab = new Array(CELLS_VERTICALLY);
 
 //Option 0-live 1-dead 
@@ -9,7 +9,7 @@ var go = false;
 //speed evolution
 var speed = 250;
 //loupe
-var loupe = 2;
+var loupe = 3;
 //show cells
 var show_cells_vertical;
 var show_cells_horizontal;
@@ -27,6 +27,42 @@ function print_cells(y,x)	{
 	document.getElementById("world").innerHTML = cells;
 }
 
+function print_cells_v2(w)	{
+	var cell_size;
+	if(loupe==1) cell_size=50;
+	else if(loupe==2) cell_size=25;
+	else if(loupe==3) cell_size=10;
+	
+	var cell_vertical = Math.floor((650)/cell_size);
+	var y=Math.floor((CELLS_VERTICALLY-cell_vertical)/2);
+	
+	var cell_horizontal = Math.floor((w-20)/cell_size);
+	var x=Math.floor((CELLS_HORIZONTAL-cell_horizontal)/2);
+	
+	var cells = "";
+	for(i=y; i<y+cell_vertical;i++){
+		for(j=x;j<x+cell_horizontal;j++){
+			var classa = "cell_";
+			if(net == false) classa+="no_net_";
+			classa+=loupe;
+			cells+='<div class="'+classa+'" id="cell_'+i+'_'+j+'" onclick="live_or_dead('+i+','+j+')"></div>';
+			
+		}
+		cells+='<div style="clear: both"></div>';
+	}
+	document.getElementById("world").innerHTML = cells;
+	for(i=y; i<y+cell_vertical;i++){
+		for(j=x;j<x+cell_horizontal;j++){
+			if(tab[i][j]==true){
+				
+					var div_name = 'cell_'+i+'_'+j;
+					document.getElementById(div_name).style.backgroundColor = "#00FF00";
+				
+			}
+		}
+	}
+}
+
 window.onload = function create_world()	{
 	change_option(0);
 	
@@ -37,12 +73,14 @@ window.onload = function create_world()	{
 		}
 	}
 	
-	print_cells(CELLS_HORIZONTAL,CELLS_VERTICALLY);
+	//print_cells(CELLS_HORIZONTAL,CELLS_VERTICALLY);
 	document.getElementById("slider1").value = "4";
 	change_speed();
-	document.getElementById("slider2").value = "2";
+	document.getElementById("slider2").value = "4";
 	change_lopue();
 	change_net();
+	
+	getDimensions();
 }
 
 function live_or_dead(y,x)	{
@@ -107,7 +145,9 @@ function next_generation(){
 				else {
 					tab_next_generation[i][j] = false;
 					var div_name = 'cell_'+i+'_'+j;
-					document.getElementById(div_name).style.backgroundColor = "#000000";
+					if(document.getElementById( div_name)){
+						document.getElementById(div_name).style.backgroundColor = "#000000";	
+					}
 				}
 			}
 			//martwa komorka
@@ -116,7 +156,9 @@ function next_generation(){
 				if(neighbors == 3) {
 					tab_next_generation[i][j] = true;
 					var div_name = 'cell_'+i+'_'+j;
-					document.getElementById(div_name).style.backgroundColor = "#00FF00";
+					if(document.getElementById(div_name)){
+						document.getElementById(div_name).style.backgroundColor = "#00FF00";
+					}
 				}
 				else tab_next_generation[i][j] = false;
 			}
@@ -164,7 +206,9 @@ function cls()	{
 		for (j=1; j < CELLS_HORIZONTAL-1; j++) {
 			tab[i][j] = false;
 			var div_name = 'cell_'+i+'_'+j;
-			document.getElementById(div_name).style.backgroundColor = "#000000";
+			if(document.getElementById(div_name)){
+				document.getElementById(div_name).style.backgroundColor = "#000000";
+			}
 		}
 	}
 }
@@ -193,6 +237,7 @@ function change_lopue()	{
 	var x = document.getElementById("slider2").value;
     document.getElementById("loupe_number").innerHTML = "x"+x;
 	loupe=x;
+	getDimensions();
 }
 
 function minus_loupe()	{
@@ -217,7 +262,9 @@ function change_net()	{
 		for (i=1; i < CELLS_VERTICALLY-1; i++) {
 			for (j=1; j < CELLS_HORIZONTAL-1; j++) {
 				var div_name = 'cell_'+i+'_'+j;
-				document.getElementById(div_name).className = 'cell_no_net';
+				if(document.getElementById(div_name)){
+					document.getElementById(div_name).className = 'cell_no_net_'+loupe;
+				}
 			}
 		}
 	}
@@ -228,8 +275,18 @@ function change_net()	{
 		for (i=1; i < CELLS_VERTICALLY-1; i++) {
 			for (j=1; j < CELLS_HORIZONTAL-1; j++) {
 				var div_name = 'cell_'+i+'_'+j;
-				document.getElementById(div_name).className = 'cell';
+				if(document.getElementById( div_name)){
+					document.getElementById(div_name).className = 'cell_'+loupe;
+				}
 			}
 		}
 	}
 }
+	
+function getDimensions() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  print_cells_v2(w);
+}
+
+window.addEventListener('resize', getDimensions);

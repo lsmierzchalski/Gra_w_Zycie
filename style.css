@@ -21,16 +21,52 @@ body	{
 #world	{
 	height:650px;
 }
-.cell	{
-	width: 19px;
-	height: 19px;
+.cell_1	{
+	width: 49px;
+	height: 49px;
 	border-bottom: thin solid white;
 	border-right: thin solid white;
 	float: left;
 }
-.cell_no_net	{
-	width: 20px;
-	height: 20px;
+.cell_no_net_1	{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.cell_2	{
+	width: 24px;
+	height: 24px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	float: left;
+}
+.cell_no_net_2	{
+	width: 25px;
+	height: 25px;
+	float: left;
+}
+.cell_3	{
+	width: 9px;
+	height: 9px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	float: left;
+}
+.cell_no_net_3	{
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+.cell_4	{
+	width: 4px;
+	height: 4px;
+	border-bottom: thin solid white;
+	border-right: thin solid white;
+	float: left;
+}
+.cell_no_net_4	{
+	width: 5px;
+	height: 5px;
 	float: left;
 }
 #options{
@@ -110,8 +146,11 @@ body	{
     border-right: 15px solid #fff;
     border-left: 15px solid #fff;
 }
+input[type=range] {
+  width: 129px; /* Specific width is required for Firefox. */
+}
 .button_speed	{
-	width: 480px;
+	width: 445px;
 	height: 80px;
 	border: thin solid white;
 	float: left;
@@ -124,8 +163,8 @@ body	{
 	border: thin solid white;
 	float: left;
 	margin-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
 	text-indent: 1%;
 	line-height: 60%;
 }
@@ -136,9 +175,10 @@ body	{
 .speed_text	{
 	float: left;
 	margin-top: 5px;
+	margin-left: 10px;
 }
 .button_loupe	{
-	width: 460px;
+	width: 425px;
 	height: 80px;
 	border: thin solid white;
 	float: left;
